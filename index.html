@@ -1,1 +1,86 @@
-Hello World
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rifaz's place to LegIt</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+        <style>
+         .sidebar-nav .navbar ul {
+             float: none;
+             display: block;
+         }
+         .sidebar-nav .navbar li {
+             float: none;
+             display: block;
+         }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <h1 class="text-center">
+                You in me den now, bub
+            </h1>
+            <div class="row"">
+                <div class="col-md-2">
+                    <div class="sidebar-nav">
+                        <div class="navbar">
+                            <ul>
+                                <li><a href="#post1">Wist I'd known earlier 2 - C Stuff</a></li>
+                                <li><a href="#post2">Wish I'd known earlier - C Stuff</a></li>
+                                <li><a href="#">nafa</a></li>
+                                <li><a href="#">bafa</a></li>
+                                <li><a href="#">kafa</a></li>
+                                <li><a href="#">rafa</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="mid-col" class="col-md-7">
+                    <div class="post" id="post1">
+                        <h2 class="text-primary">Wist I'd known earlier 2 - C Stuff</h2>
+                        <p>
+                            If you pass an array to a function, you can't find the length of the array. This is because the array gets converted to a pointer, and pointers only have the adress of the first element in the array. Whereas, array variables also store the length of the array.
+
+                            <pre>
+int wrongSizeOfArrayPassed(char arr[]) {
+    // arr = "Hey"
+    return sizeof(arr); // will return size of a pointer
+                        // not the length of "Hey" string
+}
+                            </pre>
+                            This is called pointer decay because some information(length of array) is lost.
+                        </p>
+                    </div>
+
+                    <div class="post" id="post2">
+                        <h2 class="text-primary">Wish I'd known earlier - C Stuff</h2>
+                        <p>
+                            I wish I'd known earlier just how arrays variables and pointers are not the same in C. Sure pointer values can be accessed by using syntax of arrays (pointer[index]), but I did not have an idea how it was actually different. So here's how:
+                        </p>
+                        <p>
+                            If you use <code>sizeof</code> on an array like so, <code>sizeof(charArray)</code> you will get the size of the array. Which is to say if we pass a string to <code>sizeof</code> we will get the length of the string.
+                        </p>
+                        <p>
+                            But if we use <code>sizeof</code> on a pointer, that stores the address of a string, we will get 4, or 8. i.e. size of a pointer. 4 bytes for a 32 bit PC, 8 bytes for a 64 bit PC.
+                        </p>
+                        <p>
+                            The second way they are different is that <code>&array == array</code> but, <code>&pointer != pointer</code>.
+                        </p>
+                        <p>
+                            You can make a pointer point to somewhere else in the memory, but you cannot make an array variable point anywhere else in the memory.
+                        </p>
+                        <p>
+                            And that's how they are different. :)
+                        </p>
+                        <p>
+                            ref: PG 59 of Head First C
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
