@@ -3,36 +3,68 @@
     <head>
         <title>Blog | Rifaz Nahiyan</title>
     </head>
+    <style>
+     #content {
+         display: grid;
+         grid-template-columns: 1fr 2fr 1fr;
+         grid-template-rows: auto auto 1fr;
+         grid-template-areas:
+             "header header header"
+             "nav main aside"
+             "footer footer footer";
+     }
+
+     #main-header {
+         grid-area: header;
+     }
+     .contents-nav {
+         grid-area: nav;
+     }
+     .main-content {
+         grid-area: main;
+     }
+     .sidebar {
+         grid-area: aside;
+     }
+     footer {
+         grid-area: footer;
+     }
+    </style>
     <body>
-        <header id="main-header">
-            <h1>Bl0g: Rifaz Nahiyan</h1>
-            <p>
-                The sucky dude.
-            </p>
-        </header>
-        <nav class="contents-nav">
-            <ul>
-                <li>I am Rifaz Nahiyan</li>
-                <li>I am trying to build a site</li>
-                <li>Lets see how if I can do it.</li>
-            </ul>
-        </nav>
-        <main class="main-content">
-            <p>
-                Should have some lorem ipsum thing here for now.
-            </p>
-            <p>
-                Well yeah. And spacemacs rocks.
-            </p>
-        </main>
-        <aside class="sidebar">
-            <ul>
-                Things Im working on
-                <li>Building this site <a href=""/> </li>
-                <li>Playing mind games. For science reasons.<a href=""/></li>
-                <li>University projects<a href=""/></li>
-                <li>Reading books.<a href=""/></li>
-            </ul>
-        </aside>
+        <div id="content">
+            <header id="main-header">
+                <h1>Bl0g: Rifaz Nahiyan</h1>
+                <p>
+                    The sucky dude.
+                </p>
+            </header>
+            <nav class="contents-nav">
+                <ul>
+                    <li>I am Rifaz Nahiyan</li>
+                    <li>I am trying to build a site</li>
+                    <li>Lets see how if I can do it.</li>
+                </ul>
+            </nav>
+            <main class="main-content">
+                <p>
+                    Should have some lorem ipsum thing here for now.
+                </p>
+                <p>
+                    Well yeah. And spacemacs rocks.
+                </p>
+            </main>
+            <aside class="sidebar">
+                <ul>
+                    Things Im working on
+                    <li>Building this site <a href=""/> </li>
+                    <li>Playing mind games. For science reasons.<a href=""/></li>
+                    <li>University projects<a href=""/></li>
+                    <li>Reading books.<a href=""/></li>
+                </ul>
+            </aside>
+            <footer>
+                Rifaz's Site.
+            </footer>
+        </div>
     </body>
 </html>
