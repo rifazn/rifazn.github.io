@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Markdown to HTML parser</title>
+        <script>
+         function mdToHtmlParser() {
+             var str = document.getElementById("post").value;
+             var post = "<p>" + str.replace(/\n/g, "</p>\n<p>") + "</p>";
+             post = post.replace(/\*{2}(\w+)\*{2}/g, "<strong>$1</strong>");
+             post = post.replace(/\*(\w+)\*/g, "<em>$1</em>");
+             post = post.replace(/\((\w+)\)\[(\w+)\]/g, "<a href='$2'>$1</a>");
+             post = post.replace(/\`(\w+)\`/g, "<code>$1</code>");
+             post = post.replace(/#{3}\s(\w+)/g, "<h3>$1</h3>");
+             post = post.replace(/#{2}\s(\w+)/g, "<h2>$1</h2>");
+             post = post.replace(/#\s(\w+)/g, "<h1>$1</h1>");
+             console.log(post);
+         }
+        </script>
+    </head>
+    <body>
+        <textarea cols="30" id="post" name="" rows="10" placeholder="Type in your markdown here."></textarea>
+        <button id="parseIt" onclick="mdToHtmlParser()">Convert</button>
+    </body>
+</html>
